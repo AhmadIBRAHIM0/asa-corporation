@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey;
 /**
  * The type User.
  */
-@Entity
+@Entity(tableName = "users")
 public class User {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private long id;
 
     @ColumnInfo(name = "name")
     private String name;
@@ -27,6 +27,24 @@ public class User {
 
     @ColumnInfo(name = "role")
     private String role;
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(long id) {
+        this.id = id;
+    }
 
     /**
      * Gets name.
