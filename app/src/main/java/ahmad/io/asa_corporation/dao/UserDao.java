@@ -23,7 +23,7 @@ public interface UserDao {
      * @return the user
      */
     @Query("SELECT * FROM users WHERE id = :id")
-    public User find(Long id);
+    User find(Long id);
 
     /**
      * Find by email user.
@@ -32,7 +32,7 @@ public interface UserDao {
      * @return the user
      */
     @Query("SELECT * FROM users WHERE email = :email")
-    public User findByEmail(String email);
+    User findByEmail(String email);
 
     /**
      * Find all homeless list.
@@ -40,7 +40,17 @@ public interface UserDao {
      * @return the list
      */
     @Query("SELECT * FROM users WHERE role = 'homeless'")
-    public List<User> findAllHomeLess();
+    List<User> findAllHomeLess();
+
+    /**
+     * Check if user exists.
+     *
+     * @param email    the email
+     * @param password the password
+     * @return true if the user exists, false otherwise
+     */
+    @Query("SELECT EXISTS (SELECT 1 FROM users WHERE email = :email AND password = :password)")
+    boolean checkUser(String email, String password);
 
     /**
      * Insert.
@@ -48,7 +58,7 @@ public interface UserDao {
      * @param users the users
      */
     @Insert
-    public void insert(User ...users);
+    void insert(User... users);
 
     /**
      * Update.
@@ -56,7 +66,7 @@ public interface UserDao {
      * @param users the users
      */
     @Update
-    public void update(User ...users);
+    void update(User... users);
 
     /**
      * Delete.
@@ -64,5 +74,5 @@ public interface UserDao {
      * @param users the users
      */
     @Delete
-    public void delete(User ...users);
+    void delete(User... users);
 }
