@@ -1,51 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/welcome_background"
+    android:gravity="center">
 
-    <!-- Logo -->
     <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="310dp"
-        android:layout_height="324dp"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="24dp"
-        android:src="@drawable/app_logo" />
-
-    <!-- Welcome text -->
-    <TextView
-        android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Welcome"
-        android:textSize="24sp" />
+        android:src="@drawable/app_logo" />
 
-    <!-- Button container at the bottom -->
-    <LinearLayout
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue"
+        android:textColor="@android:color/black"
+        android:textSize="42sp"
+        android:layout_gravity="start"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
+        />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aider les plus déminus comme vous pouvez !"
+        android:textColor="@android:color/black"
+        android:textSize="19sp"
+        android:layout_gravity="start"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    <Button
+        android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:text="Connexion"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        android:background="@drawable/buttons_shape"
+        android:layout_marginHorizontal="20dp"
+        />
 
-        <!-- Login button -->
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Login" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cree un compte"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        android:background="@drawable/buttons_shape"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        />
 
-        <!-- Continue as Guest button -->
-        <Button
-            android:id="@+id/guestButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Continue as Guest" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>
